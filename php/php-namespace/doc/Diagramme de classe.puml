@@ -1,0 +1,28 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Championnat {
+- nom : string
++ajouterEquipe(equipe : Equipe):void
++getNombreEquipe():int
+}
+
+class Equipe {
+- nom : string
+- nombreLikes : integer
++ incrementerNombreLikes():void
++ ajouterJoueur():void
+}
+
+class Joueur {
+- prenom : string
+- nom : string
+}
+
+class Poste {
+- Poste : string
+}
+
+Championnat --> "0..*"Equipe
+Equipe --> "1..*"Joueur
+Joueur --> "1..1"Poste
+@enduml
